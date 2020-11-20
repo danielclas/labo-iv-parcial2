@@ -1,0 +1,35 @@
+<div class="background">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-10">
+        <form class="border rounded shadow-lg border-light p-3 m-3 mt-5 bg-white">
+          <app-back-arrow></app-back-arrow>
+          <div class="row justify-content-center">
+            <div class="col-8 align-items-center">
+              <form [formGroup]="form" class="border p-3">
+                <h5>Alta de admin </h5>
+                <label for="email">Correo </label>
+                <input type="email" formControlName="email" class="form-control mb-4" placeholder="Correo">
+
+                <label for="email">Contraseña </label>
+                <input type="password" formControlName="password" class="form-control mb-4" placeholder="Contraseña">
+
+                <label for="type">Tipo de usuario</label>
+                <select formControlName="type" class="form-control">
+                  <option value="admin" selected>Admin</option>
+                </select>
+
+
+
+                <button  (click)="alta()" [disabled]="loading || form.invalid" class="btn btn-block btn-primary my-4">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  <b *ngIf="!loading">Alta de admin</b>
+                </button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

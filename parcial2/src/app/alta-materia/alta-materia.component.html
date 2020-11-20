@@ -1,0 +1,43 @@
+<div class="background">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-10">
+        <form class="border rounded shadow-lg border-light p-3 m-3 mt-5 bg-white">
+          <app-back-arrow></app-back-arrow>
+          <div class="row justify-content-center">
+            <div class="col-8 align-items-center">
+              <form [formGroup]="form" class="border p-3">
+                <h5>Alta de materia </h5>
+                <label for="nombre">Nombre </label>
+                <input type="text" formControlName="nombre" class="form-control mb-4" placeholder="Nombre">
+
+                <label for="cuatrimestre">Cuatrimestre</label>
+                <select formControlName="cuatrimestre" class="form-control">
+                  <option value="1" selected>Primero</option>
+                  <option value="2">Segundo</option>
+                </select>
+
+                <label for="año">Año</label>
+                <select formControlName="año" class="form-control">
+                  <option value="1" selected>Primero</option>
+                  <option value="2">Segundo</option>
+                </select>
+
+                <label for="cupo">Cupo </label>
+                <input  onKeyDown="return false" type="number" min=0 max=100 formControlName="cupo" class="form-control mb-4" placeholder="Cupo">
+
+                <label for="profesor">Profesor</label>
+                <app-select-profesores (selected)="setProfesor($event)"></app-select-profesores>
+
+                <button  (click)="alta()" [disabled]="loading || form.invalid || !profesor" class="btn btn-block btn-primary my-4">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  <b *ngIf="!loading">Alta de materia</b>
+                </button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

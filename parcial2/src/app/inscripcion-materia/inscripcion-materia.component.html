@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="form bg-light shadow p-3 m-4">
+    <app-back-arrow></app-back-arrow>
+    <h3 style="text-align: center;">
+      Inscripción a materias
+    </h3>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h5>Materia</h5>
+        <ul class="list-group" *ngFor="let m of materias">
+          <li class="list-group-item anchor" [ngClass]="m == materiaSelected ? 'selected' : ''" (click)="onMateriaClicked(m)">{{m.nombre}}</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Alumnos</h5>
+        <ul class="list-group" *ngFor="let a of alumnos">
+          <li class="list-group-item anchor" [ngClass]="alumnosSelected.includes(a) ? 'selected' : ''" (click)="onAlumnoClicked(a)">{{a.email}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center my-3">
+      <button (click)="inscribirMateria()" [disabled]="loading || alumnosSelected.length == 0 || !materiaSelected" class="btn btn-block-w-40 btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        <span *ngIf="!loading"> Inscribir la materia</span>
+      </button>
+    </div>
+  </div>
+</div>

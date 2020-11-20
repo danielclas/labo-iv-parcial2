@@ -1,0 +1,27 @@
+<div class="background">
+  <div class="container">
+    <div class="row justify-content-center align-items-center" [@animateGallery]="'fadeIn'">
+      <div class="col-md-10">
+        <form class="border rounded shadow-lg border-light p-3 m-3 mt-5 bg-white">
+          <div class="row justify-content-center">
+            <div class="col-6 align-items-center">
+              <form [formGroup]="login" class="border p-3">
+                <h5>Login </h5>
+                <label for="email">Correo </label>
+                <input type="email" formControlName="email" class="form-control mb-4" placeholder="Correo">
+
+                <label for="email">Contraseña </label>
+                <input type="password" formControlName="password" class="form-control mb-4" placeholder="Contraseña">
+
+                <button  (click)="signIn()" [disabled]="loading || login.invalid" class="btn btn-primary btn-block py-2">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  <span *ngIf="!loading">Ingresar</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

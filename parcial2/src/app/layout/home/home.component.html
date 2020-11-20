@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <ul class="list-group p-4 bg-light shadow my-5" [@animateGallery]="state">
+        <li class="list-group-item anchor" (click)="navigate('alta-usuario')">Alta de usuario</li>
+        <li class="list-group-item anchor" (click)="navigate('alta-admin')">Alta de admin</li>
+        <li class="list-group-item anchor" (click)="navigate('alta-materia')">Alta de materia</li>
+        <li class="list-group-item anchor" (click)="navigate('inscripcion-materia')">Inscripción a materias</li>
+        <li class="list-group-item anchor" (click)="navigate('listado-materias')">Listado de materias</li>
+        <li class="list-group-item anchor" (click)="navigate('listado-usuarios')">Listado de usuarios</li>
+      </ul>
+    </div>
+  </div>
+</div>

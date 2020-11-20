@@ -1,0 +1,12 @@
+<nav class="navbar border shadow-lg sticky-top navbar-light bg-light header">
+  <a class="navbar-brand ml-3" target="blank" href="https://github.com/danielclas/labo-iv-parcial2/">
+    <fa-icon [icon]="git" [size]="'2x'" class="text-primary"></fa-icon>
+    <b>
+      Daniel Clas - Primer parcial
+    </b>
+  </a>
+
+  <div style="text-align: end;" *ngIf="auth.currentUser != null">
+    Email: {{auth.currentUser.email}}
+  </div>
+</nav>
